@@ -12,17 +12,17 @@
 		<relativePath />
 	</parent>
 
-	<groupId>com.mycompany</groupId>
-	<artifactId>GaussFiltering</artifactId>
+	<groupId>io.github.lhilbert</groupId>
+	<artifactId>msr-read</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 
-	<name>Gauss Filtering</name>
-	<description>A Maven project implementing an ImageJ command.</description>
-	<url>http://mycompany.com/imagej/gauss-filtering/</url>
-	<inceptionYear>2017</inceptionYear>
+	<name>.msr read</name>
+	<description>A Maven project implementing an ImageJ2 reader for abberior .msr microscopy data files.</description>
+	<url>http://github.io/imagej/gauss-filtering/</url>
+	<inceptionYear>2018</inceptionYear>
 	<organization>
-		<name>My Company</name>
-		<url>http://mycompany.com/</url>
+		<name>Lennart Hilbert</name>
+		<url>http://github.io/lhilbert/</url>
 	</organization>
 	<licenses>
 		<license>
@@ -34,9 +34,9 @@
 	<developers>
 		<!-- See https://imagej.net/Team -->
 		<developer>
-			<id>ctrueden</id>
-			<name>Curtis Rueden</name>
-			<url>http://imagej.net/User:Rueden</url>
+			<id>;hilbert</id>
+			<name>Lennart Hilbert</name>
+			<url>http://imagej.net/User:lhilbert</url>
 			<roles>
 				<role>founder</role>
 				<role>lead</role>
@@ -46,14 +46,15 @@
 				<role>support</role>
 				<role>maintainer</role>
 			</roles>
+			<properties><id>lhilbert</id></properties>
 		</developer>
 	</developers>
 	<contributors>
 		<contributor>
-			<name>Yili Zhao</name>
-			<url>http://imagej.net/User:Panovr</url>
-			<roles><role>founder</role></roles>
-			<properties><id>panovr</id></properties>
+			<name>Deborah Schmidt</name>
+			<url>http://imagej.net/User:Frauzufall</url>
+			<roles><role>developer</role></roles>
+			<properties><id>frauzufall</id></properties>
 		</contributor>
 	</contributors>
 
@@ -97,17 +98,17 @@
 			<groupId>net.imagej</groupId>
 			<artifactId>imagej</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>ome</groupId>
-			<artifactId>bio-formats_plugins</artifactId>
-		</dependency>
         <dependency>
             <groupId>ome</groupId>
-            <artifactId>bio-formats</artifactId>
+            <artifactId>formats-gpl</artifactId>
         </dependency>
-		<dependency>
+		<!-- <dependency>
+			<groupId>ome</groupId>
+			<artifactId>bio-formats_plugins</artifactId>
+		</dependency> -->
+		<!-- <dependency>
 			<groupId>ome</groupId>
 			<artifactId>formats-api</artifactId>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 </project>

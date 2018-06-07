@@ -1,4 +1,4 @@
-package com.mycompany.imagej;
+package io.github.lhilbert.imagej;
 
 import loci.formats.ClassList;
 import loci.formats.FormatException;
@@ -6,11 +6,13 @@ import loci.formats.IFormatReader;
 import loci.formats.ImageReader;
 import loci.formats.in.OBFReader;
 import net.imagej.ImageJ;
+import net.imglib2.img.Img;
 import net.imglib2.img.array.ArrayImg;
 import net.imglib2.img.array.ArrayImgs;
 import net.imglib2.img.basictypeaccess.array.ShortArray;
 import net.imglib2.type.numeric.integer.UnsignedShortType;
 import org.scijava.command.Command;
+import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 
 import java.io.File;
@@ -18,9 +20,12 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-@Plugin( type = Command.class, menuPath = "Plugins>CSBDeep>CSBDeepTest" )
-public class OpenMSRImages implements Command {
+@Plugin( type = Command.class, menuPath = "Plugins>Bio-Formats>Read .msr files" )
+public class ExtractHyperstack implements Command {
 
+	@Parameter
+	private File inputFile;
+	
 	@Override
 	public void run() {
 	}
@@ -61,7 +66,7 @@ public class OpenMSRImages implements Command {
 		}
 
 		// invoke the plugin
-		ij.command().run( OpenMSRImages.class, true);
+		ij.command().run( ExtractHyperstack.class, true);
 
 	}
 
