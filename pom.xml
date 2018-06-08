@@ -102,10 +102,10 @@
             <groupId>ome</groupId>
             <artifactId>formats-gpl</artifactId>
         </dependency>
-		<!-- <dependency>
+		<dependency>
 			<groupId>ome</groupId>
 			<artifactId>bio-formats_plugins</artifactId>
-		</dependency> -->
+		</dependency>
 		<!-- <dependency>
 			<groupId>ome</groupId>
 			<artifactId>formats-api</artifactId>
