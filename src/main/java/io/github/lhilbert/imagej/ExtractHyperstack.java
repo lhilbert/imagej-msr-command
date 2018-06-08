@@ -23,6 +23,7 @@ import net.imglib2.img.Img;
 import net.imglib2.img.array.ArrayImg;
 import net.imglib2.img.array.ArrayImgs;
 import net.imglib2.img.basictypeaccess.array.ShortArray;
+import net.imglib2.img.display.imagej.ImageJFunctions;
 import net.imglib2.type.numeric.integer.UnsignedShortType;
 
 @Plugin( type = Command.class, headless = true, menuPath = "Plugins>Bio-Formats>Read .msr files" )
@@ -78,7 +79,6 @@ public class ExtractHyperstack implements Command {
 			ImporterOptions options = new ImporterOptions();
 			options.setOpenAllSeries(true);
 			options.setId(file.getAbsolutePath());
-//			options.setSeriesOn(3, true);
 			readImages = BF.openImagePlus(options);
 			
 		} catch (FormatException e) {
@@ -92,8 +92,10 @@ public class ExtractHyperstack implements Command {
 		int numChannels = readImages.length;
 		for (int ii = 0; ii < numChannels; ii++) {
 			ImagePlus thisImg = readImages[ii];
-			refIJ.ui().show(thisImg);
-			outputImg = refIJ.convert().convert(thisImg,Img.class);
+			outputImg = ImageJFunctions.wrap(thisImg);
+			if (!refIJ.ui().isHeadless()) {
+				refIJ.ui().show(outputImg);
+			}
 		}
 		
 		System.out.println(readImages.length);
